@@ -4,7 +4,7 @@ import { LiveKitRoom, VideoConference } from '@livekit/components-react';
 import '@livekit/components-styles';
 import { Check, LogOut, Share2 } from 'lucide-react';
 
-const LIVEKIT_URL = import.meta.env.LIVEKIT_URL;
+const LIVEKIT_URL = import.meta.env.VITE_LIVEKIT_URL;
 
 const Room: React.FC = () => {
     const { roomName } = useParams<{ roomName: string }>();
