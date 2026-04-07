@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "Nr8F/zmkptM=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\RoshanSpikewell\\Pictures\\Video-Call-Health\\backend\\telehealth\\telehealth.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.4\\microsoft.aspnetcore.openapi.10.0.4.nupkg.sha512",
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\microsoft.identitymodel.abstractions\\8.17.0\\microsoft.identitymodel.abstractions.8.17.0.nupkg.sha512",
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\8.17.0\\microsoft.identitymodel.jsonwebtokens.8.17.0.nupkg.sha512",
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\microsoft.identitymodel.logging\\8.17.0\\microsoft.identitymodel.logging.8.17.0.nupkg.sha512",
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\microsoft.identitymodel.tokens\\8.17.0\\microsoft.identitymodel.tokens.8.17.0.nupkg.sha512",
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\microsoft.openapi\\2.0.0\\microsoft.openapi.2.0.0.nupkg.sha512",
+    "C:\\Users\\RoshanSpikewell\\.nuget\\packages\\system.identitymodel.tokens.jwt\\8.17.0\\system.identitymodel.tokens.jwt.8.17.0.nupkg.sha512"
+  ],
+  "logs": []
+}
