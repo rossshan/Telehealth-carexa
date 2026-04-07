@@ -112,8 +112,20 @@ const Room: React.FC = () => {
                 token={token}
                 serverUrl={LIVEKIT_URL}
                 data-lk-theme="default"
-                onDisconnected={() => navigate('/')}
-                onError={(err) => setError(err)}
+                onConnected={() => console.log('[LiveKit] Connected successfully')}
+                onDisconnected={() => {
+                    console.log('[LiveKit] Disconnected');
+                    navigate('/');
+                }}
+                onError={(err) => {
+                    console.error('[LiveKit] Error:', err);
+                    setError(err);
+                }}
+                options={{
+                    disconnectOnPageLeave: true,
+                    adaptiveStream: true,
+                    dynacast: true,
+                }}
             >
                 <VideoConference />
             </LiveKitRoom>

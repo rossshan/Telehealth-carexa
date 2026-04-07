@@ -37,8 +37,7 @@ public class LiveKitService
             Room = roomName,
             CanPublish = true,
             CanSubscribe = true,
-            CanPublishData = true,
-            Name = name
+            CanPublishData = true
         };
 
         var jsonGrant = JsonSerializer.Serialize(videoGrant, JsonOptions);
@@ -48,13 +47,17 @@ public class LiveKitService
             new(JwtRegisteredClaimNames.Iss, _apiKey),
             new(JwtRegisteredClaimNames.Sub, identity),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+            new("name", name),
             new("video", jsonGrant, JsonClaimValueTypes.Json)
         };
+
+        var now = DateTime.UtcNow;
 
         var token = new JwtSecurityToken(
             issuer: _apiKey,
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(2),
+            notBefore: now,
+            expires: now.AddHours(2),
             signingCredentials: credentials);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
