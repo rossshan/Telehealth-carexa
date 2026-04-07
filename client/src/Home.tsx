@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Video, Plus, User, Stethoscope } from 'lucide-react';
 
-const API_URL = 'http://localhost:5062';
+const API_URL = 'https://telehealth-carexa.onrender.com';
 
 const Home: React.FC = () => {
     const [name, setName] = useState('');
