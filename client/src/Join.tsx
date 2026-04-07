@@ -3,7 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import axios from 'axios';
 import { User, LogIn, Stethoscope } from 'lucide-react';
 
-const API_URL = 'https://telehealth-carexa.onrender.com';
+const API_URL = import.meta.env.VITE_API_URL;;
 
 const Join: React.FC = () => {
     const [name, setName] = useState('');

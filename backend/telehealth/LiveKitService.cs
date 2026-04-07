@@ -11,11 +11,15 @@ public class LiveKitService
     private readonly string _apiKey;
     private readonly string _apiSecret;
 
-    public LiveKitService(IConfiguration configuration)
+    public LiveKitService()
     {
-        _apiKey = configuration["LiveKit:ApiKey"];
-        _apiSecret = configuration["LiveKit:ApiSecret"];
+        _apiKey = Environment.GetEnvironmentVariable("LIVEKIT_API_KEY")
+                  ?? throw new Exception("LIVEKIT_API_KEY not set");
+
+        _apiSecret = Environment.GetEnvironmentVariable("LIVEKIT_API_SECRET")
+                     ?? throw new Exception("LIVEKIT_API_SECRET not set");
     }
+
     private static readonly JsonSerializerOptions JsonOptions = new()
     {
         PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -44,7 +48,6 @@ public class LiveKitService
             new(JwtRegisteredClaimNames.Iss, _apiKey),
             new(JwtRegisteredClaimNames.Sub, identity),
             new(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-            // Crucial: Use JsonClaimValueTypes.Json to ensure the grant is encoded as an object, not a string
             new("video", jsonGrant, JsonClaimValueTypes.Json)
         };
 
